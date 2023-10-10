@@ -33,16 +33,21 @@ const scrollUpDOMElement = document.querySelector('.scroll-up')
 scrollUpDOMElement.addEventListener("click", function(){ 
 //     - inizializzo un array contenente le immagini del carosello del DOM
     const imagesDOMArray = document.querySelectorAll('.carousel-img')
+    const sideImagesDOMArray = document.querySelectorAll('.side-img')
 //     - se l'immagine attiva è la prima
     if(imagesDOMArray[0] == document.querySelector('.active')){
 //         - assegno alla prima immagine la classe hidden
             imagesDOMArray[0].classList.add('hidden')
+            sideImagesDOMArray[0].classList.add('hidden-side')
 //         - tolgo alla prima immagine la classe active
             imagesDOMArray[0].classList.remove('active')
+            sideImagesDOMArray[0].classList.remove('active-side')
 //         - assegno all'ultima immagine la classe active
             imagesDOMArray[imagesArrayLength-1].classList.add('active')
+            sideImagesDOMArray[imagesArrayLength-1].classList.add('active-side')
 //         - tolgo all'ultima immagine la classe hidden
             imagesDOMArray[imagesArrayLength-1].classList.remove('hidden')
+            sideImagesDOMArray[imagesArrayLength-1].classList.remove('hidden-side')
 
     }
 //     - ALTRIMENTI
@@ -53,12 +58,16 @@ scrollUpDOMElement.addEventListener("click", function(){
             if(imagesDOMArray[i] == document.querySelector('.active')){
 //          - assegno all'immagine corrente la classe hidden
                 imagesDOMArray[i].classList.add('hidden')
+                sideImagesDOMArray[i].classList.add('hidden-side')
 //          - tolgo all'immagine corrente la classe active
                 imagesDOMArray[i].classList.remove('active')
+                sideImagesDOMArray[i].classList.remove('active-side')
 //          - assegno all'immagine precedente la classe active
                 imagesDOMArray[i - 1].classList.add('active')
+                sideImagesDOMArray[i - 1].classList.add('active-side')
 //          - tolgo all'immagine precedente la classe hidden
                 imagesDOMArray[i - 1].classList.remove('hidden')
+                sideImagesDOMArray[i - 1].classList.remove('hidden-side')
             }
         }
     }
@@ -69,16 +78,21 @@ const scrollDownDOMElement = document.querySelector('.scroll-down')
 scrollDownDOMElement.addEventListener("click", function(){ 
 //     - inizializzo un array contenente le immagini del carosello del DOM
     const imagesDOMArray = document.querySelectorAll('.carousel-img')
+    const sideImagesDOMArray = document.querySelectorAll('.side-img')
 //     - se l'immagine attiva è l'ultima
     if(imagesDOMArray[imagesArrayLength - 1] == document.querySelector('.active')){
 //         - assegno all'ultima immagine la classe hidden
             imagesDOMArray[imagesArrayLength - 1].classList.add('hidden')
+            sideImagesDOMArray[imagesArrayLength - 1].classList.add('hidden-side')
 //         - tolgo all'ultima immagine la classe active
             imagesDOMArray[imagesArrayLength - 1].classList.remove('active')
+            sideImagesDOMArray[imagesArrayLength - 1].classList.remove('active-side')
 //         - assegno alla prima immagine la classe active
             imagesDOMArray[0].classList.add('active')
+            sideImagesDOMArray[0].classList.add('active-side')
 //         - tolgo alla prima immagine la classe hidden
             imagesDOMArray[0].classList.remove('hidden')
+            sideImagesDOMArray[0].classList.remove('hidden-side')
 
     }
 //     - ALTRIMENTI
@@ -89,12 +103,16 @@ scrollDownDOMElement.addEventListener("click", function(){
             if(imagesDOMArray[i] == document.querySelector('.active')){
 //          - assegno all'immagine corrente la classe hidden
                 imagesDOMArray[i].classList.add('hidden')
+                sideImagesDOMArray[i].classList.add('hidden-side')
 //          - tolgo all'immagine corrente la classe active
                 imagesDOMArray[i].classList.remove('active')
+                sideImagesDOMArray[i].classList.remove('active-side')
 //          - tolgo all'immagine successiva la classe hidden
                 imagesDOMArray[i+1].classList.remove('hidden')
+                sideImagesDOMArray[i+1].classList.remove('hidden-side')
 //          - assegno all'immagine successiva la classe active
                 imagesDOMArray[i+1].classList.add('active')
+                sideImagesDOMArray[i+1].classList.add('active-side')
             }
         }
     }

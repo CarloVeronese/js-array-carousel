@@ -61,4 +61,13 @@ figure{
 .side-img img{
     height: calc(500px / 5);
     width: 150px;
+    object-fit: cover;
+}
+
+.hidden-side{
+    opacity: 0.2;
+}
+
+.active-side{
+    box-shadow: 2px white;
 }
