@@ -22,6 +22,10 @@ figure{
     height: 500px;
 }
 
+[class ^= "index"]{
+    display: none;
+}
+
 .scroll-up,
 .scroll-down{
     position: absolute;
