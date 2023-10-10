@@ -2,24 +2,30 @@
 const imagesArray = ['01.webp', '02.webp', '03.webp', '04.webp', '05.webp']
 // - creo una variabile per richiamare dal DOM il container delle immagini
 const figureDOMElement = document.getElementById('carousel-container')
+const sideCarouselDOMElement = document.getElementById('side-carousel')
 // - calcolo la lunghezza dell'array
 imagesArrayLength = imagesArray.length
 // - per n volte, dove n è il numero di immagini dentro l'array
 for(i = 0; i < imagesArrayLength; i++){
 //     - creo un nuovo elemento div
     let newImage = document.createElement('div')
+    let newImageSide = document.createElement('div')
 //     - al suo interno inserisco il tag img con l'immagine corrisettiva all'iterazione del ciclo for
     newImage.innerHTML = '<img src="./img/' + imagesArray[i] + '" alt=""></img>'
+    newImageSide.innerHTML = '<img src="./img/' + imagesArray[i] + '" alt=""></img>'
 //     - assegno alla prima immagine la classe active
     if(i == 0){
         newImage.classList.add('active', 'carousel-img')
+        newImageSide.classList.add('active-side', 'side-img')
     }
 //     - a tutte le immagini diverse dalla prima assegno la classe hidden 
     if (i > 0){
         newImage.classList.add('hidden', 'carousel-img')
+        newImageSide.classList.add('hidden-side', 'side-img')
     }
 //     - aggiungo all'interno del container delle immagini l'elemento creato con l'immagine corrispondente
     figureDOMElement.append(newImage)
+    sideCarouselDOMElement.append(newImageSide)
 }
 // - creo la variabile per richiamare lo scroll up dal DOM
 const scrollUpDOMElement = document.querySelector('.scroll-up')
