@@ -11,11 +11,9 @@ for(i = 0; i < imagesArrayLength; i++){
 //     - al suo interno inserisco il tag img con l'immagine corrispettiva all'iterazione del ciclo for
     newImage.innerHTML = '<img src="./img/' + imagesArray[i] + '" alt=""></img>'
     newImageSide.innerHTML = '<img src="./img/' + imagesArray[i] + '" alt=""></img>'
-    newImage.classList.add('hidden', 'carousel-img')
-    newImageSide.classList.add('hidden-side', 'side-img')
+    newImage.classList.add('carousel-img')
+    newImageSide.classList.add('side-img')
     if(i == 0){
-        newImage.classList.remove('hidden')
-        newImageSide.classList.remove('hidden-side')
         newImage.classList.add('active')
         newImageSide.classList.add('active-side')
     }
@@ -37,8 +35,6 @@ const imagesDOMArray = document.querySelectorAll('.carousel-img')
 const sideImagesDOMArray = document.querySelectorAll('.side-img')
 
 scrollUpDOMElement.addEventListener("click", function(){
-    imagesDOMArray[currentIndex].classList.add('hidden')
-    sideImagesDOMArray[currentIndex].classList.add('hidden-side')
     imagesDOMArray[currentIndex].classList.remove('active')
     sideImagesDOMArray[currentIndex].classList.remove('active-side')
     if(currentIndex == 0){
@@ -46,14 +42,10 @@ scrollUpDOMElement.addEventListener("click", function(){
     }
     imagesDOMArray[currentIndex - 1].classList.add('active')
     sideImagesDOMArray[currentIndex - 1].classList.add('active-side')
-    imagesDOMArray[currentIndex - 1].classList.remove('hidden')
-    sideImagesDOMArray[currentIndex - 1].classList.remove('hidden-side')
     currentIndex--
 });
 
 scrollDownDOMElement.addEventListener("click", function(){
-    imagesDOMArray[currentIndex].classList.add('hidden')
-    sideImagesDOMArray[currentIndex].classList.add('hidden-side')
     imagesDOMArray[currentIndex].classList.remove('active')
     sideImagesDOMArray[currentIndex].classList.remove('active-side')
     if(currentIndex == (imagesArrayLength - 1)){
@@ -61,7 +53,5 @@ scrollDownDOMElement.addEventListener("click", function(){
     }
     imagesDOMArray[currentIndex + 1].classList.add('active')
     sideImagesDOMArray[currentIndex + 1].classList.add('active-side')
-    imagesDOMArray[currentIndex + 1].classList.remove('hidden')
-    sideImagesDOMArray[currentIndex + 1].classList.remove('hidden-side')
     currentIndex++
 });
